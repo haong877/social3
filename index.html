@@ -1,461 +1,545 @@
 <!doctype html>
 <html lang="ko">
- <head>
-  <script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260831-23-d035456","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Canva Sans":"YAFLd8sKbwc,2","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAHO2VMiyZo,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAEul-FRQw4,0","Georgia":"YAGzXkO0pEM,0","Helvetica Neue":"YAFcf6CtJfI,0","Impact":"YAFcfnjI7Vk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YAFdJksXcAk,0","Libre Baskerville":"YACgEUFdPdA,0","Manrope":"YAHO2b2feC4,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YADLjI9qxTA,0","Nunito":"YACgEX8C5Gg,0","Oleo Script":"YACgEQQ14jI,0","Phantom Sans":"YAHO2E8Pb88,0","Playfair Display":"YACgEYmuCJE,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Quicksand":"YADWjpfPmdk,0","Raleway":"YACgEVg3xZg,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Spectral":"YAHO2rVUHIM,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Ubuntu":"YACgERDU--Q,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0","ui-monospace":"YADlN8CFZ8Q,0","ui-sans-serif":"YACkoN-xg4g,0"}}');</script>
-  <script src="/_sdk/50d846425a1e5082.telemetry_sdk.js" integrity="sha512-Otbex+ztlVbcEGql0rXGd/3E3ee/hqAntg6DeuUEMG6pIPbXGOSvZbFZVzknAXi1tH/itQ+ijEhOTr2aWj6CXg=="></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>헌법과 기본권 보장 디지털 학습지</title>
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&amp;family=Noto+Serif+KR:wght@600;700&amp;display=swap" rel="stylesheet">
-  <style>
-    :root { --navy:#102a43; --navy-deep:#071c2e; --gold:#b58a35; --paper:#ffffff; --mist:#f2f4f6; --ink:#1e293b; }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family:"Noto Sans KR", sans-serif; color:var(--ink); background:#e9edf1; }
-    .sheet-shell { width:100%; min-height:calc(100 * min(var(--vh, 1vh), 1vh)); }
-    .study-page { width:100%; max-width:1120px; margin:0 auto; padding:32px 20px 56px; }
-    .serif { font-family:"Noto Serif KR", serif; }
-    .top-rule { height:5px; background:linear-gradient(to right,#b58a35 0 18%,#102a43 18% 100%); }
-    .paper-card { border:1px solid #d9e0e7; box-shadow:0 5px 18px rgba(16,42,67,.07); }
-    .case-card { transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
-    .case-card:hover { transform:translateY(-3px); border-color:var(--gold); box-shadow:0 12px 22px rgba(16,42,67,.12); }
-    .case-card.selected { background:#102a43; border-color:#102a43; color:#fff; box-shadow:0 12px 25px rgba(7,28,46,.2); }
-    .case-card.selected .case-number, .case-card.selected .case-label { color:#f4d69a; }
-    .step-number { width:48px; height:48px; display:flex; align-items:center; justify-content:center; background:var(--navy); color:#fff; font-family:"Noto Serif KR",serif; font-size:22px; font-weight:700; }
-    .choice { transition:background .16s ease,border-color .16s ease; }
-    .choice:has(input:checked) { border-color:#b58a35; background:#fffaf0; }
-    input[type="checkbox"], input[type="radio"] { accent-color:#a77922; width:17px; height:17px; }
-    input[type="text"], textarea { width:100%; border:1px solid #cbd5df; background:#fff; color:#172033; border-radius:4px; padding:11px 12px; outline:none; transition:border .15s,box-shadow .15s; }
-    input[type="text"]:focus, textarea:focus { border-color:#b58a35; box-shadow:0 0 0 3px rgba(181,138,53,.16); }
-    textarea { resize:vertical; min-height:110px; line-height:1.75; }
-    .action-button { transition:transform .15s ease,filter .15s ease; }
-    .action-button:hover { transform:translateY(-1px); filter:brightness(1.04); }
-    .action-button:focus-visible, .case-card:focus-visible { outline:3px solid #d7a541; outline-offset:3px; }
-    .status-message { display:none; }
-    .status-message.show { display:flex; }
-    .loading-overlay { display:none; position:fixed; inset:0; z-index:50; background:rgba(7,28,46,.62); align-items:center; justify-content:center; padding:20px; }
-    .loading-overlay.show { display:flex; }
-    .spinner { width:36px; height:36px; border:4px solid rgba(255,255,255,.28); border-top-color:#f4d69a; border-radius:50%; animation:spin .8s linear infinite; }
-    @keyframes spin { to { transform:rotate(360deg); } }
-    @media print {
-      body { background:#fff; }
-      .study-page { max-width:none; padding:0; }
-      .no-print, .loading-overlay { display:none !important; }
-      .print-hide { display:none !important; }
-      #activity-area { display:block !important; }
-      textarea { overflow:visible !important; height:auto !important; min-height:0 !important; border-color:#aab4c0 !important; }
-      input[type="text"] { border-color:#aab4c0 !important; }
-      .paper-card { box-shadow:none !important; break-inside:avoid; }
-      .step-card { break-inside:avoid; }
-    }
-  </style>
-  <script src="/_sdk/b3bf9e8ac58e6ad6.data_sdk.js" type="text/javascript" integrity="sha512-otc1u9NYq9Ms5Jt//7vmhrrqR5CLPr8Jdgs6741gqniClfLMcfmC+jK/cKuQdhLv6G0esJ/FzaMS9tv0T/vj/Q=="></script>
-  <script src="/_sdk/2cfae6c35b9820dc.resizing_sdk.js" type="text/javascript" integrity="sha512-Oy+wKa9tloayelgS18tBfR707QfWMdeA8unVpm1M0/W/edVyjcRCNO6/jCvDwt/HpUta1v7sfMHiF1mAVr5RIA=="></script>
- </head>
- <body data-template-id="__page-root">
-  <div class="sheet-shell">
-   <div class="top-rule"></div>
-   <main class="study-page" aria-labelledby="page-title">
-    
-    <header data-template-id="header-panel" class="canva-header paper-card bg-white px-6 py-8 md:px-10">
-     <div class="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-      <div>
-       <p data-template-id="header-subject" class="canva-text mb-3 text-sm font-semibold tracking-[0.18em]">사회 / 정치와 법</p>
-       <h1 data-template-id="page-title" class="canva-text serif mb-3 text-3xl font-bold leading-tight md:text-4xl">헌법과 기본권 보장 디지털 학습지</h1>
-       <p data-template-id="page-subtitle" class="canva-text max-w-2xl leading-7 text-slate-600">주요 헌법재판소 판례를 분석하고 기본권 침해 여부와 구제 방안을 다각도로 탐구해 봅시다.</p>
-      </div>
-      <div class="hidden md:block border-l-4 border-[#b58a35] pl-4 text-sm text-slate-500">
-       <span data-template-id="header-note" class="canva-text">헌법재판소 판례 분석 학습지</span>
-      </div>
-     </div>
-    </header>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>헌법과 기본권 보장 디지털 학습지</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#102a43; --navy-deep:#071c2e; --gold:#b58a35; --paper:#ffffff; --mist:#f2f4f6; --ink:#1e293b; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:"Noto Sans KR", sans-serif; color:var(--ink); background:#e9edf1; }
+  .study-page { width:100%; max-width:1120px; margin:0 auto; padding:32px 20px 56px; }
+  .serif { font-family:"Noto Serif KR", serif; }
+  .top-rule { height:5px; background:linear-gradient(to right,#b58a35 0 18%,#102a43 18% 100%); }
+  .paper-card { border:1px solid #d9e0e7; box-shadow:0 5px 18px rgba(16,42,67,.07); background:#fff; }
 
-    <section data-template-id="student-info-panel" class="canva-panel paper-card mt-6 bg-white p-6 md:p-8" aria-labelledby="student-info-title">
-     <div class="mb-5 flex items-center gap-3">
-      <i data-lucide="user-round" class="h-5 w-5 text-[#b58a35]" aria-hidden="true"></i>
-      <h2 data-template-id="student-info-title" class="canva-text serif font-bold text-lg text-[#102a43]">학생 정보 입력</h2>
-     </div>
-     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      <div>
-       <label data-template-id="grade-label" class="canva-text mb-2 block text-sm font-semibold" for="grade">학년</label> 
-       <input id="grade" type="text" value="2학년" readonly aria-readonly="true" class="bg-slate-100 font-medium">
-      </div>
-      <div>
-       <label data-template-id="class-label" class="canva-text mb-2 block text-sm font-semibold" for="class-number">반</label> 
-       <input id="class-number" data-template-id="class-input" class="canva-input" type="text" placeholder="예: 1반">
-      </div>
-      <div>
-       <label data-template-id="student-number-label" class="canva-text mb-2 block text-sm font-semibold" for="student-number">번호</label> 
-       <input id="student-number" data-template-id="student-number-input" class="canva-input" type="text" placeholder="예: 15번">
-      </div>
-      <div>
-       <label data-template-id="student-name-label" class="canva-text mb-2 block text-sm font-semibold" for="student-name">이름</label> 
-       <input id="student-name" data-template-id="student-name-input" class="canva-input" type="text" placeholder="홍길동">
-      </div>
-     </div>
-    </section>
+  .canva-text { color: var(--ink); }
+  .canva-header{ border-bottom:3px solid var(--gold); }
+  .canva-panel{ border-radius:4px; }
+  .canva-card{ border-radius:2px; }
+  .canva-input{ }
+  .canva-button{
+    background: var(--gold);
+    color: var(--navy-deep);
+    border: 1px solid var(--gold);
+  }
+  .canva-button.border{
+    background: transparent;
+    color: #fff;
+    border-color: rgba(255,255,255,.55) !important;
+  }
+  .canva-button.border:hover{ background: rgba(255,255,255,.08); }
 
-    <section class="mt-8" aria-labelledby="case-selection-title">
-     <div class="mb-4 flex items-end justify-between border-b-2 border-[#102a43] pb-3">
-      <div>
-       <p data-template-id="case-kicker" class="canva-text text-sm font-semibold tracking-[0.14em] text-[#b58a35]">CASE STUDY</p>
-       <h2 data-template-id="case-selection-title" class="canva-text serif mt-1 font-bold text-xl text-[#102a43]">분석할 헌법재판소 판례 선택</h2>
-      </div>
-      <span data-template-id="case-select-guide" class="canva-text hidden text-sm text-slate-500 md:block">아래 4가지 판례 중 1가지를 클릭하여 학습을 시작하세요.</span>
-     </div>
-     <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-      <button type="button" class="case-card paper-card rounded-sm bg-white p-5 text-left" data-case="internet" aria-pressed="false"> 
-       <h3 data-template-id="case-1-title" class="canva-text mt-2 font-bold leading-6 text-lg text-[#102a43]">1. 인터넷 실명제(본인확인제) 위헌 사건</h3>
-       <p data-template-id="case-1-summary" class="canva-text case-label mt-2 text-sm leading-6 text-slate-600">익명 표현의 자유 및 개인정보 보호 문제</p>
-      </button> 
-      <button type="button" class="case-card paper-card rounded-sm bg-white p-5 text-left" data-case="religion" aria-pressed="false"> 
-       <h3 data-template-id="case-2-title" class="canva-text mt-2 font-bold leading-6 text-lg text-[#102a43]">2. 육군 훈련소 종교 행사 강제 참석 사건</h3>
-       <p data-template-id="case-2-summary" class="canva-text case-label mt-2 text-sm leading-6 text-slate-600">종교의 자유 및 양심의 자유 권리 침해</p>
-      </button> 
-      <button type="button" class="case-card paper-card rounded-sm bg-white p-5 text-left" data-case="bonus" aria-pressed="false"> 
-       <h3 data-template-id="case-3-title" class="canva-text mt-2 font-bold leading-6 text-lg text-[#102a43]">3. 제대군인 가산점제 위헌 사건</h3>
-       <p data-template-id="case-3-summary" class="canva-text case-label mt-2 text-sm leading-6 text-slate-600">평등권 및 공무담임권 간의 상충</p>
-      </button> 
-      <button type="button" class="case-card paper-card rounded-sm bg-white p-5 text-left" data-case="life" aria-pressed="false"> 
-       <h3 data-template-id="case-4-title" class="canva-text mt-2 font-bold leading-6 text-lg text-[#102a43]">4. 연명치료와 인간의 존엄 사건</h3>
-       <p data-template-id="case-4-summary" class="canva-text case-label mt-2 text-sm leading-6 text-slate-600">인간으로서의 존엄성과 자기결정권</p>
-      </button>
-     </div>
-    </section>
+  .case-card { transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+  .case-card:hover { transform:translateY(-3px); border-color:var(--gold); box-shadow:0 12px 22px rgba(16,42,67,.12); }
+  .case-card.selected { background:#102a43; border-color:#102a43; color:#fff; box-shadow:0 12px 25px rgba(7,28,46,.2); }
+  .case-card.selected .case-label { color:#f4d69a; }
+  .case-card.selected h3{ color:#fff; }
 
-    <section id="activity-area" class="mt-8 hidden" aria-live="polite">
-     <article data-template-id="case-detail-panel" class="canva-panel border-l-4 border-[#b58a35] bg-[#fffaf0] p-6 md:p-8" aria-labelledby="selected-case-title">
-      <p data-template-id="selected-case-kicker" class="canva-text text-sm font-semibold tracking-[0.13em] text-[#b58a35]">선택한 판례 개요</p>
-      <h2 id="selected-case-title" class="serif mt-2 text-2xl font-bold text-[#102a43]"></h2>
-      <p id="selected-case-description" class="mt-4 whitespace-pre-line leading-8 text-slate-700"></p>
-      <div class="mt-5 border-t border-[#ead8ad] pt-4">
-       <p data-template-id="thinking-prompt-label" class="canva-text text-sm font-bold text-[#102a43]">💡 핵심 탐구 질문</p>
-       <p id="selected-case-question" class="mt-1 leading-7 text-slate-700 font-medium"></p>
-      </div>
-     </article>
+  .step-number { width:48px; height:48px; display:flex; align-items:center; justify-content:center; background:var(--navy); color:#fff; font-family:"Noto Serif KR",serif; font-size:22px; font-weight:700; }
+  .choice { transition:background .16s ease,border-color .16s ease; }
+  .choice:has(input:checked) { border-color:#b58a35; background:#fffaf0; }
+  input[type="checkbox"], input[type="radio"] { accent-color:#a77922; width:17px; height:17px; }
+  input[type="text"], textarea { width:100%; border:1px solid #cbd5df; background:#fff; color:#172033; border-radius:4px; padding:11px 12px; outline:none; transition:border .15s,box-shadow .15s; }
+  input[type="text"]:focus, textarea:focus { border-color:#b58a35; box-shadow:0 0 0 3px rgba(181,138,53,.16); }
+  textarea { resize:vertical; min-height:110px; line-height:1.75; }
+  .action-button { transition:transform .15s ease,filter .15s ease; }
+  .action-button:hover { transform:translateY(-1px); filter:brightness(1.04); }
+  .action-button:focus-visible, .case-card:focus-visible { outline:3px solid #d7a541; outline-offset:3px; }
+  .status-message { display:none; }
+  .status-message.show { display:flex; }
+  .loading-overlay { display:none; position:fixed; inset:0; z-index:50; background:rgba(7,28,46,.62); align-items:center; justify-content:center; padding:20px; }
+  .loading-overlay.show { display:flex; }
+  .spinner { width:36px; height:36px; border:4px solid rgba(255,255,255,.28); border-top-color:#f4d69a; border-radius:50%; animation:spin .8s linear infinite; }
+  @keyframes spin { to { transform:rotate(360deg); } }
 
-     <div class="mt-6 space-y-6">
-      
-      <section data-template-id="step-1-card" class="canva-card step-card paper-card bg-white p-6 md:p-8" aria-labelledby="step-1-title">
-       <div class="flex gap-4">
-        <div class="step-number">1</div>
-        <div class="pt-1">
-         <p data-template-id="step-1-kicker" class="canva-text text-sm font-semibold tracking-[0.12em] text-[#b58a35]">STEP 1</p>
-         <h2 data-template-id="step-1-title" class="canva-text serif mt-1 font-bold text-xl text-[#102a43]">관련 기본권 분석</h2>
-        </div>
-       </div>
-       <p data-template-id="step-1-guide" class="canva-text mt-5 leading-7 text-slate-600">해당 사건에서 침해되거나 쟁점이 되는 기본권을 모두 선택하고, 그 이유를 서술해 주세요.</p>
-       <fieldset class="mt-5 grid grid-cols-1 gap-3 md:grid-cols-2">
-        <legend data-template-id="rights-legend" class="canva-text mb-3 text-sm font-semibold text-slate-700">쟁점 기본권 선택 (복수 선택 가능)</legend> 
-        <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="checkbox" name="rights" value="인간의 존엄과 가치 및 행복추구권"><span data-template-id="right-dignity" class="canva-text">인간의 존엄과 가치 및 행복추구권</span></label> 
-        <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="checkbox" name="rights" value="자유권"><span data-template-id="right-liberty" class="canva-text">자유권 (신체, 표현, 종교 등)</span></label> 
-        <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="checkbox" name="rights" value="평등권"><span data-template-id="right-equality" class="canva-text">평등권</span></label> 
-        <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="checkbox" name="rights" value="참정권"><span data-template-id="right-political" class="canva-text">참정권</span></label> 
-        <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="checkbox" name="rights" value="사회권"><span data-template-id="right-social" class="canva-text">사회권</span></label> 
-        <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="checkbox" name="rights" value="청구권"><span data-template-id="right-claim" class="canva-text">청구권</span></label>
-       </fieldset>
-       <div class="mt-6">
-        <label data-template-id="rights-reason-label" class="canva-text mb-2 block font-semibold text-slate-700" for="rights-reason">기본권 침해/쟁점 이유 작성</label> 
-        <textarea id="rights-reason" data-template-id="rights-reason-input" class="canva-input" placeholder="선택한 기본권이 왜 주요 쟁점이 되거나 침해되었다고 판단했는지 까닭을 논리적으로 작성하세요."></textarea>
-       </div>
-      </section>
+  .citizen-box{
+    background:#f2f4f6;
+    border:1px dashed #9aa7b5;
+    border-radius:6px;
+    padding:16px;
+    margin-top:20px;
+  }
 
-      <section data-template-id="step-2-card" class="canva-card step-card paper-card bg-white p-6 md:p-8" aria-labelledby="step-2-title">
-       <div class="flex gap-4">
-        <div class="step-number">2</div>
-        <div class="pt-1">
-         <p data-template-id="step-2-kicker" class="canva-text text-sm font-semibold tracking-[0.12em] text-[#b58a35]">STEP 2</p>
-         <h2 data-template-id="step-2-title" class="canva-text serif mt-1 font-bold text-xl text-[#102a43]">기본권 구제 절차</h2>
-        </div>
-       </div>
-       <p data-template-id="step-2-guide" class="canva-text mt-5 leading-7 text-slate-600">이 사건에서 활용 가능한 기본권 구제 방법 및 절차를 선택하고 이유를 서술해 주세요.</p>
-       <fieldset class="mt-5 grid grid-cols-1 gap-3">
-        <legend data-template-id="remedy-legend" class="canva-text mb-3 text-sm font-semibold text-slate-700">구제 방법 선택</legend> 
-        <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="checkbox" name="remedies" value="헌법재판소의 헌법소원심판 청구"><span data-template-id="remedy-constitutional" class="canva-text">헌법재판소의 헌법소원심판 청구</span></label> 
-        <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="checkbox" name="remedies" value="법원의 위헌법률심판 제청"><span data-template-id="remedy-unconstitutional-law" class="canva-text">법원의 위헌법률심판 제청</span></label> 
-        <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="checkbox" name="remedies" value="법원에 소송 제기"><span data-template-id="remedy-lawsuit" class="canva-text">법원에 일반 행정/민사 소송 제기</span></label> 
-        <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="checkbox" name="remedies" value="국가인권위원회에 진정"><span data-template-id="remedy-human-rights" class="canva-text">국가인권위원회에 진정</span></label> 
-        <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="checkbox" name="remedies" value="국회나 관공서에 청원"><span data-template-id="remedy-petition" class="canva-text">국회나 관공서에 청원</span></label>
-       </fieldset>
+  /* 인쇄(window.print)와 이미지 저장(html2canvas)이 함께 쓰는 '깔끔 모드' */
+  @media print{
+    body.pdf-mode{ background:#fff !important; }
+    body.pdf-mode .study-page{ max-width:none !important; padding:0 !important; }
+  }
+  body.pdf-mode{ background:#fff !important; }
+  body.pdf-mode .study-page{ max-width:none !important; padding:0 !important; }
+  body.pdf-mode .no-print, body.pdf-mode .loading-overlay{ display:none !important; }
+  body.pdf-mode .print-hide{ display:none !important; }
+  body.pdf-mode #activity-area{ display:block !important; }
+  body.pdf-mode textarea{ overflow:visible !important; height:auto !important; min-height:0 !important; border-color:#aab4c0 !important; }
+  body.pdf-mode input[type="text"]{ border-color:#aab4c0 !important; }
+  body.pdf-mode .paper-card{ box-shadow:none !important; }
+  body.pdf-mode .case-card:not(.selected){ display:none !important; }
+</style>
+</head>
+<body data-template-id="__page-root">
+<div class="sheet-shell">
+ <div class="top-rule"></div>
+ <main class="study-page" aria-labelledby="page-title">
 
-       <aside data-template-id="legal-guide-panel" class="canva-panel mt-6 border border-[#d9c28b] bg-[#fffaf0] p-5" aria-labelledby="legal-guide-title">
-        <h3 data-template-id="legal-guide-title" class="canva-text font-bold text-[#102a43]">💡 참고 법률 상식: 위헌법률심판 vs 헌법소원심판</h3>
-        <div class="mt-3 grid gap-4 md:grid-cols-2">
-         <div>
-          <p data-template-id="unconstitutional-title" class="canva-text text-sm font-bold text-[#b58a35]">위헌법률심판</p>
-          <p data-template-id="unconstitutional-text" class="canva-text mt-1 text-sm leading-6 text-slate-700">재판 중인 사건에 적용될 법률이 헌법에 위배되는지 여부를 법원의 제청으로 헌법재판소가 심판함.</p>
-         </div>
-         <div class="border-t border-[#ead8ad] pt-4 md:border-l md:border-t-0 md:pl-4 md:pt-0">
-          <p data-template-id="constitutional-title" class="canva-text text-sm font-bold text-[#b58a35]">헌법소원심판</p>
-          <p data-template-id="constitutional-text" class="canva-text mt-1 text-sm leading-6 text-slate-700">공공권력의 행사 또는 불행사로 기본권을 직접 침해받은 국민이 헌법재판소에 구제를 청구함.</p>
-         </div>
-        </div>
-       </aside>
-
-       <div class="mt-6">
-        <label data-template-id="remedy-reason-label" class="canva-text mb-2 block font-semibold text-slate-700" for="remedy-reason">선택한 구제 방법의 정당성 및 선택 이유</label> 
-        <textarea id="remedy-reason" data-template-id="remedy-reason-input" class="canva-input" placeholder="해당 구제 절차가 왜 적절한지 설명해 보세요."></textarea>
-       </div>
-      </section>
-
-      <section data-template-id="step-3-card" class="canva-card step-card paper-card bg-white p-6 md:p-8" aria-labelledby="step-3-title">
-       <div class="flex gap-4">
-        <div class="step-number">3</div>
-        <div class="pt-1">
-         <p data-template-id="step-3-kicker" class="canva-text text-sm font-semibold tracking-[0.12em] text-[#b58a35]">STEP 3</p>
-         <h2 data-template-id="step-3-title" class="canva-text serif mt-1 font-bold text-xl text-[#102a43]">대안 및 파급효과 예측</h2>
-        </div>
-       </div>
-       <label data-template-id="solution-label" class="canva-text mt-5 block font-semibold text-slate-700" for="solution">갈등 해결을 위한 제안 / 대안 정책</label> 
-       <textarea id="solution" data-template-id="solution-input" class="canva-input mt-2" placeholder="기본권 침해를 줄이면서 공익도 달성할 수 있는 조화로운 해결책이나 대안을 서술해 보세요."></textarea>
-
-       <div class="mt-6 grid gap-5 md:grid-cols-2">
-        <div data-template-id="positive-panel" class="canva-panel border-t-4 border-[#54765b] bg-[#f4f8f3] p-5">
-         <h3 data-template-id="positive-title" class="canva-text font-bold text-[#2e4d34]">🟢 예상되는 긍정적 파급효과</h3>
-         <label data-template-id="positive-1-label" class="canva-text mt-4 block text-sm font-semibold text-slate-700" for="positive-1">긍정적 효과 1</label> 
-         <input id="positive-1" data-template-id="positive-1-input" class="canva-input mt-1" type="text" placeholder="예: 개인의 자유권 확장"> 
-         <label data-template-id="positive-2-label" class="canva-text mt-4 block text-sm font-semibold text-slate-700" for="positive-2">긍정적 효과 2</label> 
-         <input id="positive-2" data-template-id="positive-2-input" class="canva-input mt-1" type="text" placeholder="예: 소수자 권익 보호 강화">
-        </div>
-        <div data-template-id="negative-panel" class="canva-panel border-t-4 border-[#9b5d4b] bg-[#fcf5f2] p-5">
-         <h3 data-template-id="negative-title" class="canva-text font-bold text-[#633325]">🔴 예상되는 부작용 및 한계</h3>
-         <label data-template-id="negative-1-label" class="canva-text mt-4 block text-sm font-semibold text-slate-700" for="negative-1">부작용/한계 1</label> 
-         <input id="negative-1" data-template-id="negative-1-input" class="canva-input mt-1" type="text" placeholder="예: 행정 비용 증가"> 
-         <label data-template-id="negative-2-label" class="canva-text mt-4 block text-sm font-semibold text-slate-700" for="negative-2">부작용/한계 2</label> 
-         <input id="negative-2" data-template-id="negative-2-input" class="canva-input mt-1" type="text" placeholder="예: 사회적 악용 가능성 존재">
-        </div>
-       </div>
-      </section>
-
-      <section data-template-id="step-4-card" class="canva-card step-card paper-card bg-white p-6 md:p-8" aria-labelledby="step-4-title">
-       <div class="flex gap-4">
-        <div class="step-number">4</div>
-        <div class="pt-1">
-         <p data-template-id="step-4-kicker" class="canva-text text-sm font-semibold tracking-[0.12em] text-[#b58a35]">STEP 4</p>
-         <h2 data-template-id="step-4-title" class="canva-text serif mt-1 font-bold text-xl text-[#102a43]">헌법재판관 최종 평결 작성</h2>
-        </div>
-       </div>
-       <p data-template-id="step-4-guide" class="canva-text mt-5 leading-7 text-slate-600">헌법재판관이 되어 최종 주문을 선택하고 판결 이유를 종합적으로 서술해 보세요.</p>
-       <fieldset class="mt-5">
-        <legend data-template-id="order-legend" class="canva-text mb-3 font-semibold text-slate-700">최종 주문 선택</legend>
-        <div class="space-y-3">
-         <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="radio" name="judgment-order" value="피청구인의 조치는 위헌임을 선고한다."><span data-template-id="order-1" class="canva-text">위헌: 피청구인의 조치는 위헌임을 선고한다.</span></label> 
-         <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="radio" name="judgment-order" value="해당 법률 조항은 헌법에 합치되지 아니한다."><span data-template-id="order-2" class="canva-text">헌법불합치: 해당 법률 조항은 헌법에 합치되지 아니한다.</span></label> 
-         <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="radio" name="judgment-order" value="피청구인의 처분을 취소한다."><span data-template-id="order-3" class="canva-text">인용: 피청구인의 처분을 취소한다.</span></label> 
-         <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="radio" name="judgment-order" value="청구인의 청구를 기각한다."><span data-template-id="order-4" class="canva-text">기각/합헌: 청구인의 청구를 기각한다 (합헌).</span></label>
-        </div>
-       </fieldset>
-       <div class="mt-6">
-        <label data-template-id="selected-order-label" class="canva-text mb-2 block font-semibold text-slate-700" for="judgment-order-text">선택된 판결 주문</label> 
-        <textarea id="judgment-order-text" class="min-h-[76px]" placeholder="위 주문 중 하나를 선택하면 이곳에 자동으로 입력됩니다."></textarea>
-       </div>
-       <div class="mt-6">
-        <label data-template-id="judgment-reason-label" class="canva-text mb-2 block font-semibold text-slate-700" for="judgment-reason">판결 이유 및 법적 근거 작성</label> 
-        <textarea id="judgment-reason" data-template-id="judgment-reason-input" class="canva-input" placeholder="기본권의 본질적 내용 침해 여부, 과잉금지의 원칙 준수 여부 등을 종합하여 판결 내린 까닭을 서술하세요."></textarea>
-       </div>
-      </section>
-
-     </div>
-
-     <section data-template-id="submission-panel" class="canva-panel mt-6 border-t-4 border-[#b58a35] bg-[#102a43] p-6 text-white md:p-8" aria-labelledby="submission-title">
-      <h2 data-template-id="submission-title" class="canva-text serif font-bold text-2xl">학습지 제출 및 데이터 저장</h2>
-      <p data-template-id="submission-guide" class="canva-text mt-2 max-w-3xl text-sm leading-6 text-slate-300">작성한 학습 내용을 Google Sheets에 직접 제출하거나, 클립보드에 복사하여 수동으로 전달할 수 있습니다.</p>
-      <div class="no-print mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-       <button id="submit-button" data-template-id="submit-button" type="button" class="canva-button action-button rounded-sm bg-[#b58a35] px-6 py-3 font-semibold text-white hover:bg-[#a3792b]">Google 시트로 제출하기</button> 
-       <button id="copy-button" data-template-id="copy-button" type="button" class="canva-button action-button rounded-sm border border-slate-400 bg-transparent px-6 py-3 font-semibold text-white hover:bg-white/10">데이터 복사 (시트 붙여넣기용)</button> 
-       <button id="print-button" data-template-id="print-button" type="button" class="canva-button action-button rounded-sm border border-slate-400 bg-transparent px-6 py-3 font-semibold text-white hover:bg-white/10">학습지 인쇄 / PDF 저장</button>
-      </div>
-      <div id="status-message" class="status-message mt-5 items-start gap-3 border p-4 text-sm leading-6" role="status">
-       <i id="status-icon" data-lucide="info" class="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true"></i> 
-       <span id="status-text"></span>
-      </div>
-     </section>
-
-    </section>
-   </main>
-  </div>
-
-  <div id="loading-overlay" class="loading-overlay" aria-live="assertive" aria-busy="true">
-   <div class="flex items-center gap-4 border border-white/20 bg-[#102a43] px-6 py-5 text-white shadow-2xl">
-    <div class="spinner"></div>
-    <span data-template-id="loading-text" class="canva-text font-medium">구글 시트로 데이터를 전송하고 있습니다...</span>
+  <header data-template-id="header-panel" class="canva-header paper-card bg-white px-6 py-8 md:px-10">
+   <div class="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+    <div>
+     <p data-template-id="header-subject" class="canva-text mb-3 text-sm font-semibold tracking-[0.18em]">통합사회 · 헌법과 기본권 단원 · 수행평가 연습</p>
+     <h1 data-template-id="page-title" class="canva-text serif mb-3 text-2xl md:text-3xl font-bold leading-tight">헌법과 기본권 보장 디지털 학습지</h1>
+     <p data-template-id="page-subtitle" class="canva-text max-w-2xl leading-7">판례를 분석하고, 내가 직접 정책을 제안한 뒤 모의 판결문까지 작성해 봅시다.</p>
+    </div>
+    <div class="hidden md:block border-l-4 border-[#b58a35] pl-4 text-sm text-slate-500">
+     <span data-template-id="header-note" class="canva-text">1인 1기기 · 태블릿 / 크롬북 학습용</span>
+    </div>
    </div>
-  </div>
+  </header>
 
-  <script src="/_sdk/0aac212797dcb9a6.editing_sdk.js" integrity="sha512-U1Z5TGB/MTX0fFSADhP7rVM3+UzJJjKTapiY1vm1cxcbcyWo4eBuCJNJO6zARJ5kHopP9UvWNtPszOqzRc1ICA=="></script>
-  <script>
-    // Google Apps Script Web App Endpoint URL
-    const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwCTRvR8dmTPcw5U3NcDm4PjrdOU9zjv2d1WO4tMNZAtyP4o7fiXVzMM5dwepW_sBEp/exec";
+  <section data-template-id="student-info-panel" class="canva-panel paper-card mt-6 bg-white p-6 md:p-8" aria-labelledby="student-info-title">
+   <div class="mb-5 flex items-center gap-3">
+    <i data-lucide="user-round" class="h-5 w-5 text-[#b58a35]" aria-hidden="true"></i>
+    <h2 data-template-id="student-info-title" class="canva-text serif text-base font-bold">기본 정보</h2>
+   </div>
+   <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <div>
+     <label data-template-id="grade-label" class="canva-text mb-2 block text-sm font-semibold" for="grade">학년</label>
+     <input id="grade" type="text" value="2학년" readonly aria-readonly="true" class="bg-slate-100 font-medium">
+    </div>
+    <div>
+     <label data-template-id="class-label" class="canva-text mb-2 block text-sm font-semibold" for="class-number">반</label>
+     <input id="class-number" data-template-id="class-input" class="canva-input" type="text" placeholder="예) 3">
+    </div>
+    <div>
+     <label data-template-id="student-number-label" class="canva-text mb-2 block text-sm font-semibold" for="student-number">번호</label>
+     <input id="student-number" data-template-id="student-number-input" class="canva-input" type="text" placeholder="예) 12">
+    </div>
+    <div>
+     <label data-template-id="student-name-label" class="canva-text mb-2 block text-sm font-semibold" for="student-name">이름</label>
+     <input id="student-name" data-template-id="student-name-input" class="canva-input" type="text" placeholder="이름을 입력하세요">
+    </div>
+   </div>
+  </section>
 
-    const cases = {
-      internet: {
-        title: "인터넷 실명제(본인확인제) 위헌 사건",
-        description: "큰 인터넷 게시판을 운영하는 회사가 글을 쓰는 사람의 이름이나 본인 정보를 확인하도록 한 제도입니다.\n\n헌법재판소는 실명을 확인해야 한다면 사람들이 자신의 생각을 자유롭게 쓰기 어려워질 수 있다고 보았습니다. 또한 본인 확인을 위해 모은 개인정보가 유출될 위험도 있다고 판단했습니다.",
-        question: "인터넷에서 안전을 지키려는 목적과 자유롭게 의견을 표현할 권리 사이에는 어떤 균형이 필요할까요?"
-      },
-      religion: {
-        title: "육군 훈련소 종교 행사 강제 참석 사건",
-        description: "육군 신병훈련소에서 훈련병들에게 여러 종교 행사 가운데 하나에 반드시 참석하도록 한 사건입니다.\n\n종교를 믿지 않거나 종교 행사를 원하지 않는 사람도 참석해야 한다면, 자신의 종교를 선택하거나 믿지 않을 자유가 제한될 수 있습니다.",
-        question: "공동체 활동이 필요하더라도 개인이 원하지 않는 종교 활동에 참여하도록 해도 될까요?"
-      },
-      bonus: {
-        title: "제대군인 가산점제 위헌 사건",
-        description: "공무원 채용시험 등에서 군 복무를 마친 사람에게 일정한 가산점을 주는 제도입니다.\n\n헌법재판소는 이 제도가 여성이나 건강상 이유로 군 복무를 할 수 없는 사람의 공직 진출 기회를 지나치게 줄일 수 있다고 보았습니다.",
-        question: "군 복무에 대한 보상과 모든 사람에게 공정한 채용 기회를 주는 일은 어떻게 함께 이루어질 수 있을까요?"
-      },
-      life: {
-        title: "연명치료와 인간의 존엄 사건",
-        description: "회복 가능성이 거의 없는 환자에게 생명 연장 치료를 계속해야 하는지, 환자가 자신의 삶과 죽음에 관한 결정을 할 수 있는지가 문제 된 사건입니다.\n\n이 사건은 환자의 자기결정권과 인간으로서 존엄하게 삶을 마무리할 권리에 대해 생각하게 합니다.",
-        question: "환자의 생명을 보호하는 일과 환자 자신의 뜻을 존중하는 일은 어떻게 조화를 이루어야 할까요?"
-      }
+  <section class="mt-8" aria-labelledby="case-selection-title">
+   <div class="mb-4 flex items-end justify-between border-b-2 border-[#102a43] pb-3">
+    <div>
+     <p data-template-id="case-kicker" class="canva-text text-sm font-semibold tracking-[0.14em] text-[#b58a35]">판례 선택</p>
+     <h2 data-template-id="case-selection-title" class="canva-text serif mt-1 text-lg font-bold">분석할 판례를 고르세요</h2>
+    </div>
+    <span data-template-id="case-select-guide" class="canva-text hidden text-sm md:block text-slate-500">카드를 클릭하면 아래에 학습 활동이 나타납니다</span>
+   </div>
+   <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+    <button type="button" class="case-card paper-card rounded-sm bg-white p-5 text-left" data-case="internet" aria-pressed="false">
+     <h3 data-template-id="case-1-title" class="canva-text mt-2 font-bold leading-6">인터넷 실명제(본인확인제) 위헌 사건</h3>
+     <p data-template-id="case-1-summary" class="canva-text case-label mt-2 text-sm leading-6 text-slate-500">표현의 자유와 개인정보 보호가 쟁점이 된 사건</p>
+    </button>
+    <button type="button" class="case-card paper-card rounded-sm bg-white p-5 text-left" data-case="religion" aria-pressed="false">
+     <h3 data-template-id="case-2-title" class="canva-text mt-2 font-bold leading-6">육군 훈련소 종교 행사 강제 참석 사건</h3>
+     <p data-template-id="case-2-summary" class="canva-text case-label mt-2 text-sm leading-6 text-slate-500">종교의 자유와 신앙을 가지지 않을 자유가 쟁점이 된 사건</p>
+    </button>
+    <button type="button" class="case-card paper-card rounded-sm bg-white p-5 text-left" data-case="voting" aria-pressed="false">
+     <h3 data-template-id="case-3-title" class="canva-text mt-2 font-bold leading-6">재외국민 선거권 제한 위헌 사건</h3>
+     <p data-template-id="case-3-summary" class="canva-text case-label mt-2 text-sm leading-6 text-slate-500">참정권 제한과 국민 주권의 범위가 쟁점이 된 사건</p>
+    </button>
+    <button type="button" class="case-card paper-card rounded-sm bg-white p-5 text-left" data-case="life" aria-pressed="false">
+     <h3 data-template-id="case-4-title" class="canva-text mt-2 font-bold leading-6">연명치료와 인간의 존엄 사건</h3>
+     <p data-template-id="case-4-summary" class="canva-text case-label mt-2 text-sm leading-6 text-slate-500">자기결정권과 인간의 존엄이 쟁점이 된 사건</p>
+    </button>
+   </div>
+  </section>
+
+  <section id="activity-area" class="mt-8 hidden" aria-live="polite">
+   <article data-template-id="case-detail-panel" class="canva-panel border-l-4 border-[#b58a35] bg-[#fffaf0] p-6 md:p-8" aria-labelledby="selected-case-title">
+    <p data-template-id="selected-case-kicker" class="canva-text text-sm font-semibold tracking-[0.13em] text-[#b58a35]">선택한 판례</p>
+    <h2 id="selected-case-title" class="serif mt-2 text-2xl font-bold text-[#102a43]"></h2>
+    <p id="selected-case-description" class="mt-4 whitespace-pre-line leading-8 text-slate-700"></p>
+    <div class="mt-5 border-t border-[#ead8ad] pt-4">
+     <p data-template-id="thinking-prompt-label" class="canva-text text-sm font-bold">🤔 생각해볼 질문</p>
+     <p id="selected-case-question" class="mt-1 leading-7 text-slate-700"></p>
+    </div>
+   </article>
+
+   <div class="mt-6 space-y-6">
+
+    <!-- STEP 1 -->
+    <section data-template-id="step-1-card" class="canva-card step-card paper-card bg-white p-6 md:p-8" aria-labelledby="step-1-title">
+     <div class="flex gap-4">
+      <div class="step-number">1</div>
+      <div class="pt-1">
+       <p data-template-id="step-1-kicker" class="canva-text text-sm font-semibold tracking-[0.12em] text-[#b58a35]">STEP 1</p>
+       <h2 data-template-id="step-1-title" class="canva-text serif mt-1 text-lg font-bold">침해된 기본권 찾기</h2>
+      </div>
+     </div>
+     <p data-template-id="step-1-guide" class="canva-text mt-5 leading-7">이 사건에서 어떤 기본권이 침해되었다고 생각하나요? 해당하는 항목을 모두 선택해 보세요.</p>
+     <fieldset class="mt-5 grid grid-cols-1 gap-3 md:grid-cols-2">
+      <legend data-template-id="rights-legend" class="canva-text mb-3 text-sm font-semibold">침해된 기본권 (중복 선택 가능)</legend>
+      <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="checkbox" name="rights" value="인간의 존엄과 가치 및 행복추구권"><span data-template-id="right-dignity" class="canva-text">인간의 존엄과 가치 및 행복추구권</span></label>
+      <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="checkbox" name="rights" value="자유권"><span data-template-id="right-liberty" class="canva-text">자유권</span></label>
+      <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="checkbox" name="rights" value="평등권"><span data-template-id="right-equality" class="canva-text">평등권</span></label>
+      <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="checkbox" name="rights" value="참정권"><span data-template-id="right-political" class="canva-text">참정권</span></label>
+      <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="checkbox" name="rights" value="사회권"><span data-template-id="right-social" class="canva-text">사회권</span></label>
+      <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="checkbox" name="rights" value="청구권"><span data-template-id="right-claim" class="canva-text">청구권</span></label>
+     </fieldset>
+     <div class="mt-6">
+      <label data-template-id="rights-reason-label" class="canva-text mb-2 block font-semibold" for="rights-reason">그렇게 생각한 이유를 서술해 보세요</label>
+      <textarea id="rights-reason" data-template-id="rights-reason-input" class="canva-input" placeholder="어떤 기본권이 어떻게 침해되었는지, 근거를 들어 구체적으로 작성해 보세요."></textarea>
+     </div>
+    </section>
+
+    <!-- STEP 2 -->
+    <section data-template-id="step-2-card" class="canva-card step-card paper-card bg-white p-6 md:p-8" aria-labelledby="step-2-title">
+     <div class="flex gap-4">
+      <div class="step-number">2</div>
+      <div class="pt-1">
+       <p data-template-id="step-2-kicker" class="canva-text text-sm font-semibold tracking-[0.12em] text-[#b58a35]">STEP 2</p>
+       <h2 data-template-id="step-2-title" class="canva-text serif mt-1 text-lg font-bold">기본권 구제 제도 선택하기</h2>
+      </div>
+     </div>
+     <p data-template-id="step-2-guide" class="canva-text mt-5 leading-7">이 사건에서 활용할 수 있는 구제 제도를 선택해 보세요.</p>
+     <fieldset class="mt-5 grid grid-cols-1 gap-3">
+      <legend data-template-id="remedy-legend" class="canva-text mb-3 text-sm font-semibold">구제 제도 (중복 선택 가능)</legend>
+      <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="checkbox" name="remedies" value="헌법재판소의 헌법소원심판 청구"><span data-template-id="remedy-constitutional" class="canva-text">헌법재판소의 헌법소원심판 청구</span></label>
+      <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="checkbox" name="remedies" value="법원의 위헌법률심판 제청"><span data-template-id="remedy-unconstitutional-law" class="canva-text">법원의 위헌법률심판 제청</span></label>
+      <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="checkbox" name="remedies" value="법원에 소송 제기"><span data-template-id="remedy-lawsuit" class="canva-text">법원에 소송 제기</span></label>
+      <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="checkbox" name="remedies" value="국가인권위원회에 진정"><span data-template-id="remedy-human-rights" class="canva-text">국가인권위원회에 진정</span></label>
+      <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="checkbox" name="remedies" value="국회나 관공서에 청원"><span data-template-id="remedy-petition" class="canva-text">국회나 관공서에 청원</span></label>
+     </fieldset>
+
+     <aside data-template-id="legal-guide-panel" class="canva-panel mt-6 border border-[#d9c28b] bg-[#fffaf0] p-5" aria-labelledby="legal-guide-title">
+      <h3 data-template-id="legal-guide-title" class="canva-text font-bold">헌법소원 vs 위헌법률심판, 무엇이 다를까요?</h3>
+      <div class="mt-3 grid gap-4 md:grid-cols-2">
+       <div>
+        <p data-template-id="unconstitutional-title" class="canva-text text-sm font-bold">위헌법률심판 제청</p>
+        <p data-template-id="unconstitutional-text" class="canva-text mt-1 text-sm leading-6">재판 중인 사건에서 적용되는 법률 자체가 헌법에 어긋난다고 볼 때, 법원이 헌법재판소에 그 법률의 위헌 여부를 판단해 달라고 요청하는 제도입니다.</p>
+       </div>
+       <div class="border-t border-[#ead8ad] pt-4 md:border-l md:border-t-0 md:pl-4 md:pt-0">
+        <p data-template-id="constitutional-title" class="canva-text text-sm font-bold">헌법소원심판 청구</p>
+        <p data-template-id="constitutional-text" class="canva-text mt-1 text-sm leading-6">국가기관의 공권력 행사(또는 불행사)로 국민이 직접 기본권을 침해당했을 때, 국민이 헌법재판소에 직접 구제를 청구하는 제도입니다.</p>
+       </div>
+      </div>
+     </aside>
+
+     <div class="mt-6">
+      <label data-template-id="remedy-reason-label" class="canva-text mb-2 block font-semibold" for="remedy-reason">왜 그 구제 제도를 선택했는지 이유를 서술해 보세요</label>
+      <textarea id="remedy-reason" data-template-id="remedy-reason-input" class="canva-input" placeholder="선택한 구제 제도가 이 사건에 적합한 이유와 법적 근거를 서술해 보세요."></textarea>
+     </div>
+    </section>
+
+    <!-- STEP 3 -->
+    <section data-template-id="step-3-card" class="canva-card step-card paper-card bg-white p-6 md:p-8" aria-labelledby="step-3-title">
+     <div class="flex gap-4">
+      <div class="step-number">3</div>
+      <div class="pt-1">
+       <p data-template-id="step-3-kicker" class="canva-text text-sm font-semibold tracking-[0.12em] text-[#b58a35]">STEP 3</p>
+       <h2 data-template-id="step-3-title" class="canva-text serif mt-1 text-lg font-bold">시민 참여와 대안 제안, 파급효과 분석</h2>
+      </div>
+     </div>
+
+     <div class="citizen-box">
+      <label class="canva-text block font-semibold" for="citizen-action">👥 시민으로서 이 문제 해결에 참여할 수 있는 방안 1가지</label>
+      <textarea id="citizen-action" class="mt-2" placeholder="예) 서명 운동, 캠페인, 공청회 참여, 시민단체 활동, 국민청원 등 내가 시민으로서 직접 할 수 있는 참여 방법을 구체적으로 적어 보세요."></textarea>
+      <label class="canva-text mt-4 block font-semibold" for="citizen-impact">그 참여가 사회에 미치는 영향</label>
+      <textarea id="citizen-impact" class="mt-2" placeholder="위에서 작성한 참여 방안이 실제로 실행된다면, 사회에 어떤 변화나 영향을 줄 수 있을지 서술해 보세요."></textarea>
+     </div>
+
+     <label data-template-id="solution-label" class="canva-text mt-6 block font-semibold" for="solution">🏛️ 내가 국회의원이 되어 이 문제를 해결하는 법률을 제정하거나 정책을 만든다면?</label>
+     <textarea id="solution" data-template-id="solution-input" class="canva-input mt-2" placeholder="구체적으로 어떤 법률을 새로 만들거나 고칠지, 또는 어떤 정책을 시행할지 자유롭게 작성해 보세요."></textarea>
+
+     <div class="mt-6 grid gap-5 md:grid-cols-2">
+      <div data-template-id="positive-panel" class="canva-panel border-t-4 border-[#54765b] bg-[#f4f8f3] p-5">
+       <h3 data-template-id="positive-title" class="canva-text font-bold">이 대안의 긍정적 효과</h3>
+       <label data-template-id="positive-1-label" class="canva-text mt-4 block text-sm font-semibold" for="positive-1">긍정적 효과 ①</label>
+       <input id="positive-1" data-template-id="positive-1-input" class="canva-input mt-1" type="text">
+       <label data-template-id="positive-2-label" class="canva-text mt-4 block text-sm font-semibold" for="positive-2">긍정적 효과 ②</label>
+       <input id="positive-2" data-template-id="positive-2-input" class="canva-input mt-1" type="text">
+      </div>
+      <div data-template-id="negative-panel" class="canva-panel border-t-4 border-[#9b5d4b] bg-[#fcf5f2] p-5">
+       <h3 data-template-id="negative-title" class="canva-text font-bold">이 대안의 부정적 효과</h3>
+       <label data-template-id="negative-1-label" class="canva-text mt-4 block text-sm font-semibold" for="negative-1">부정적 효과 ①</label>
+       <input id="negative-1" data-template-id="negative-1-input" class="canva-input mt-1" type="text">
+       <label data-template-id="negative-2-label" class="canva-text mt-4 block text-sm font-semibold" for="negative-2">부정적 효과 ②</label>
+       <input id="negative-2" data-template-id="negative-2-input" class="canva-input mt-1" type="text">
+      </div>
+     </div>
+    </section>
+
+    <!-- STEP 4 -->
+    <section data-template-id="step-4-card" class="canva-card step-card paper-card bg-white p-6 md:p-8" aria-labelledby="step-4-title">
+     <div class="flex gap-4">
+      <div class="step-number">4</div>
+      <div class="pt-1">
+       <p data-template-id="step-4-kicker" class="canva-text text-sm font-semibold tracking-[0.12em] text-[#b58a35]">STEP 4</p>
+       <h2 data-template-id="step-4-title" class="canva-text serif mt-1 text-lg font-bold">모의 판결문 작성하기</h2>
+      </div>
+     </div>
+     <p data-template-id="step-4-guide" class="canva-text mt-5 leading-7">판사가 되어 이 사건에 대한 결론(주문)과 그 이유를 작성해 보세요.</p>
+     <fieldset class="mt-5">
+      <legend data-template-id="order-legend" class="canva-text mb-3 font-semibold">주문 선택</legend>
+      <div class="space-y-3">
+       <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="radio" name="judgment-order" value="피청구인의 조치는 위헌임을 선고한다."><span data-template-id="order-1" class="canva-text">피청구인의 조치는 위헌임을 선고한다.</span></label>
+       <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="radio" name="judgment-order" value="해당 법률 조항은 헌법에 합치되지 아니한다."><span data-template-id="order-2" class="canva-text">해당 법률 조항은 헌법에 합치되지 아니한다.</span></label>
+       <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="radio" name="judgment-order" value="피청구인의 처분을 취소한다."><span data-template-id="order-3" class="canva-text">피청구인의 처분을 취소한다.</span></label>
+       <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="radio" name="judgment-order" value="청구인의 청구를 기각한다."><span data-template-id="order-4" class="canva-text">청구인의 청구를 기각한다.</span></label>
+      </div>
+     </fieldset>
+     <div class="mt-6">
+      <label data-template-id="selected-order-label" class="canva-text mb-2 block font-semibold" for="judgment-order-text">선택한 주문</label>
+      <textarea id="judgment-order-text" class="min-h-[76px]" placeholder="위 주문 중 하나를 선택하면 이곳에 자동으로 입력됩니다."></textarea>
+     </div>
+     <div class="mt-6">
+      <label data-template-id="judgment-reason-label" class="canva-text mb-2 block font-semibold" for="judgment-reason">판결 이유</label>
+      <textarea id="judgment-reason" data-template-id="judgment-reason-input" class="canva-input" placeholder="1~3단계에서 작성한 내용을 바탕으로, 이러한 결론을 내린 이유를 판사의 입장에서 서술해 보세요."></textarea>
+     </div>
+    </section>
+
+   </div>
+
+   <section data-template-id="submission-panel" class="canva-panel mt-6 border-t-4 border-[#b58a35] bg-[#102a43] p-6 text-white md:p-8" aria-labelledby="submission-title">
+    <h2 data-template-id="submission-title" class="canva-text serif text-lg font-bold text-white">학습 결과 제출</h2>
+    <p data-template-id="submission-guide" class="canva-text mt-2 max-w-3xl text-sm leading-6 text-blue-100">작성을 마쳤다면 아래 버튼으로 제출하거나, 인쇄·이미지 저장으로 보관할 수 있습니다. 네트워크 오류가 발생하면 데이터 복사 기능으로 백업해 선생님께 전달하세요.</p>
+    <div class="no-print mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+     <button id="submit-button" data-template-id="submit-button" type="button" class="canva-button action-button rounded-sm px-5 py-3 font-semibold">구글 시트로 제출하기</button>
+     <button id="copy-button" data-template-id="copy-button" type="button" class="canva-button action-button rounded-sm border px-5 py-3 font-semibold">시트 업로드용 데이터 복사</button>
+     <button id="print-button" data-template-id="print-button" type="button" class="canva-button action-button rounded-sm border px-5 py-3 font-semibold">PDF 저장 / 인쇄</button>
+     <button id="image-button" type="button" class="canva-button action-button rounded-sm border px-5 py-3 font-semibold">이미지로 저장</button>
+    </div>
+    <div id="status-message" class="status-message mt-5 items-start gap-3 border p-4 text-sm leading-6" role="status">
+     <i id="status-icon" data-lucide="info" class="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true"></i>
+     <span id="status-text"></span>
+    </div>
+   </section>
+
+  </section>
+ </main>
+</div>
+
+<div id="loading-overlay" class="loading-overlay" aria-live="assertive" aria-busy="true">
+ <div class="flex items-center gap-4 border border-white/20 bg-[#102a43] px-6 py-5 text-white shadow-2xl">
+  <div class="spinner"></div>
+  <span data-template-id="loading-text" class="canva-text font-medium">처리 중입니다...</span>
+ </div>
+</div>
+
+<script>
+  const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwCTRvR8dmTPcw5U3NcDm4PjrdOU9zjv2d1WO4tMNZAtyP4o7fiXVzMM5dwepW_sBEp/exec";
+
+  const cases = {
+    internet: {
+      title: "인터넷 실명제(본인확인제) 위헌 사건",
+      description: "정보통신망법은 하루 평균 이용자가 일정 수 이상인 인터넷 게시판을 운영하는 사업자에게, 글을 쓰는 사람의 실명과 주민등록번호 등 본인 확인 정보를 확인하도록 의무화했습니다.\n이 제도는 인터넷상의 악성 댓글이나 명예훼손, 허위 사실 유포 등을 줄이기 위한 목적으로 도입되었습니다.\n그러나 본인 확인 절차를 거쳐야만 글을 쓸 수 있게 되면서, 이용자들은 자신의 신원이 드러날 것을 걱정해 자유롭게 의견을 표현하기 어려워졌습니다.\n또한 사업자가 본인 확인을 위해 대량의 개인정보를 수집·보관하게 되면서, 정보가 유출될 위험도 함께 커졌습니다.\n헌법재판소는 익명 표현의 자유도 헌법이 보장하는 표현의 자유에 포함된다고 보았습니다.\n인터넷상의 부작용을 줄이려는 목적은 정당하지만, 실명 확인이라는 수단이 그 목적에 비해 지나치게 기본권을 제한한다고 판단했습니다.\n결국 헌법재판소는 해당 조항에 대해 위헌 결정을 내렸고, 이후 인터넷 실명제는 폐지되었습니다.\n이 판결은 온라인 공간에서의 표현의 자유와 개인정보 보호의 중요성을 확인시켜 준 사례로 남아 있습니다.",
+      question: "인터넷에서 안전을 지키려는 목적과 자유롭게 의견을 표현할 권리 사이에는 어떤 균형이 필요할까요?"
+    },
+    religion: {
+      title: "육군 훈련소 종교 행사 강제 참석 사건",
+      description: "육군 신병훈련소에서는 훈련병들에게 개신교, 불교, 천주교, 원불교 중 하나의 종교 행사에 반드시 참석하도록 하고, 이를 사실상 훈련 일정의 하나로 운영했습니다.\n훈련병들은 자신의 신앙이나 무교 여부와 관계없이 지정된 종교 행사에 참석해야 했고, 참석하지 않으면 불이익을 받을 수 있는 분위기가 조성되었습니다.\n일부 훈련병들은 이러한 운영 방식이 자신의 종교의 자유, 특히 특정 신앙을 갖지 않을 자유를 침해한다고 주장하며 문제를 제기했습니다.\n법원은 국가가 개인에게 특정 종교 행사에 참석하도록 사실상 강제하는 것은 국가의 종교적 중립 의무에 어긋난다고 보았습니다.\n군대와 같이 개인이 조직의 통제를 벗어나기 어려운 환경에서는, 종교 행사 참석 강요가 개인의 신앙의 자유를 더욱 크게 위축시킬 수 있다고 지적했습니다.\n결국 법원은 이러한 운영 방식이 위법한 공권력 행사에 해당한다고 판단했습니다.\n이 판결 이후 군에서는 종교 행사를 자율적으로 참여하는 방식으로 점차 바꾸어 나가고 있습니다.\n이 사건은 공동체 생활 속에서도 개인의 종교의 자유가 존중되어야 함을 보여준 사례로 꼽힙니다.",
+      question: "공동체 활동이 필요하더라도 개인이 원하지 않는 종교 활동에 참여하도록 해도 될까요?"
+    },
+    voting: {
+      title: "재외국민 선거권 제한 위헌 사건",
+      description: "2000년대 초반까지 공직선거법과 국민투표법은 외국에 거주하는 재외국민에게 대통령 선거권, 국회의원 선거권, 국민투표권을 전혀 인정하지 않았습니다.\n국내에 주민등록이 되어 있지 않다는 이유만으로, 국적을 유지한 채 해외에서 생활하는 국민들은 선거일에 투표할 방법이 전혀 없었습니다.\n이에 재외국민들은 이러한 법 조항이 헌법이 보장하는 참정권을 지나치게 제한한다며 헌법소원심판을 청구했습니다.\n헌법재판소는 국민이라면 거주지와 관계없이 주권자로서 선거에 참여할 권리를 가진다고 보았습니다.\n단순히 해외에 거주한다는 사정만으로 선거권 자체를 원천적으로 박탈하는 것은 참정권의 본질적 내용을 침해한다고 판단했습니다.\n결국 헌법재판소는 관련 조항에 대해 헌법불합치 결정을 내리며, 국회에 법을 개정하도록 하였습니다.\n이후 공직선거법이 개정되어 재외국민도 대통령 선거와 국회의원 비례대표 선거 등에서 투표할 수 있는 길이 열렸습니다.\n이 판결은 국민 주권의 의미와 참정권이 미치는 범위를 다시 생각하게 한 대표적인 사례로 평가받습니다.",
+      question: "국내에 거주하지 않는 국민에게도 선거권을 동일하게 보장해야 하는 이유는 무엇일까요?"
+    },
+    life: {
+      title: "연명치료와 인간의 존엄 사건",
+      description: "지속적인 식물인간 상태에 빠진 한 환자는 회복 가능성이 없는 상태에서 인공호흡기 등 연명치료를 계속 받고 있었습니다.\n환자의 가족들은 평소 환자가 무의미한 연명치료를 원하지 않는다는 뜻을 밝혀 왔다며, 병원 측에 연명치료를 중단해 줄 것을 요청했습니다.\n병원 측이 이를 받아들이지 않자, 가족들은 법원에 연명치료 장치를 제거해 달라는 소송을 제기했습니다.\n이 사건은 생명을 최대한 유지하는 것이 항상 최선인지, 환자 자신의 뜻을 존중하는 것이 더 중요한지에 대한 사회적 논쟁을 불러일으켰습니다.\n법원은 회복 불가능한 사망 단계에 이른 환자의 경우, 인간으로서의 존엄과 가치 및 행복추구권에 근거해 자기결정권을 행사할 수 있다고 보았습니다.\n환자 본인의 의사가 확인되거나 추정될 수 있다면, 무의미한 연명치료를 거부하고 자연스럽게 삶을 마무리할 권리도 존중되어야 한다고 판단했습니다.\n이에 따라 법원은 환자 가족의 청구를 받아들여 연명치료 중단을 인정하는 판결을 내렸습니다.\n이 판결은 이후 '연명의료결정법' 제정에도 큰 영향을 미쳤습니다.\n이 사건은 생명권과 자기결정권이 충돌할 때 이를 어떻게 조화시킬 것인지 생각하게 하는 대표적인 사례입니다.",
+      question: "환자의 생명을 보호하는 일과 환자 자신의 뜻을 존중하는 일은 어떻게 조화를 이루어야 할까요?"
+    }
+  };
+
+  let selectedCaseKey = "";
+
+  function selectedValues(name) {
+    return [...document.querySelectorAll('input[name="' + name + '"]:checked')].map(input => input.value).join(", ");
+  }
+
+  function getData() {
+    const caseData = cases[selectedCaseKey] || { title: "" };
+    return {
+      submitted_at: new Date().toISOString(),
+      grade: document.getElementById("grade").value.trim(),
+      class: document.getElementById("class-number").value.trim(),
+      number: document.getElementById("student-number").value.trim(),
+      name: document.getElementById("student-name").value.trim(),
+      selected_case: caseData.title,
+      selected_rights: selectedValues("rights"),
+      rights_reason: document.getElementById("rights-reason").value.trim(),
+      selected_remedies: selectedValues("remedies"),
+      remedy_reason: document.getElementById("remedy-reason").value.trim(),
+      citizen_action: document.getElementById("citizen-action").value.trim(),
+      citizen_impact: document.getElementById("citizen-impact").value.trim(),
+      solution: document.getElementById("solution").value.trim(),
+      positive_effect_1: document.getElementById("positive-1").value.trim(),
+      positive_effect_2: document.getElementById("positive-2").value.trim(),
+      negative_effect_1: document.getElementById("negative-1").value.trim(),
+      negative_effect_2: document.getElementById("negative-2").value.trim(),
+      judgment_order: document.getElementById("judgment-order-text").value.trim(),
+      judgment_reason: document.getElementById("judgment-reason").value.trim()
     };
+  }
 
-    let selectedCaseKey = "";
+  function showStatus(message, type) {
+    const box = document.getElementById("status-message");
+    const text = document.getElementById("status-text");
+    const icon = document.getElementById("status-icon");
+    box.className = "status-message show mt-5 items-start gap-3 border p-4 text-sm leading-6";
+    if (type === "success") box.classList.add("border-emerald-300", "bg-emerald-50", "text-emerald-900");
+    else if (type === "error") box.classList.add("border-red-300", "bg-red-50", "text-red-900");
+    else box.classList.add("border-amber-300", "bg-amber-50", "text-amber-950");
+    text.textContent = message;
+    icon.setAttribute("data-lucide", type === "success" ? "circle-check" : type === "error" ? "triangle-alert" : "info");
+    lucide.createIcons();
+  }
 
-    function selectedValues(name) {
-      return [...document.querySelectorAll('input[name="' + name + '"]:checked')].map(input => input.value).join(", ");
-    }
-
-    function getData() {
-      const caseData = cases[selectedCaseKey] || { title: "" };
-      return {
-        submitted_at: new Date().toISOString(),
-        grade: document.getElementById("grade").value.trim(),
-        class: document.getElementById("class-number").value.trim(),
-        number: document.getElementById("student-number").value.trim(),
-        name: document.getElementById("student-name").value.trim(),
-        selected_case: caseData.title,
-        selected_rights: selectedValues("rights"),
-        rights_reason: document.getElementById("rights-reason").value.trim(),
-        selected_remedies: selectedValues("remedies"),
-        remedy_reason: document.getElementById("remedy-reason").value.trim(),
-        solution: document.getElementById("solution").value.trim(),
-        positive_effect_1: document.getElementById("positive-1").value.trim(),
-        positive_effect_2: document.getElementById("positive-2").value.trim(),
-        negative_effect_1: document.getElementById("negative-1").value.trim(),
-        negative_effect_2: document.getElementById("negative-2").value.trim(),
-        judgment_order: document.getElementById("judgment-order-text").value.trim(),
-        judgment_reason: document.getElementById("judgment-reason").value.trim()
-      };
-    }
-
-    function showStatus(message, type) {
-      const box = document.getElementById("status-message");
-      const text = document.getElementById("status-text");
-      const icon = document.getElementById("status-icon");
-      box.className = "status-message show mt-5 items-start gap-3 border p-4 text-sm leading-6";
-      if (type === "success") box.classList.add("border-emerald-300", "bg-emerald-50", "text-emerald-900");
-      else if (type === "error") box.classList.add("border-red-300", "bg-red-50", "text-red-900");
-      else box.classList.add("border-amber-300", "bg-amber-50", "text-amber-950");
-      text.textContent = message;
-      icon.setAttribute("data-lucide", type === "success" ? "circle-check" : type === "error" ? "triangle-alert" : "info");
-      if (window.lucide) lucide.createIcons();
-    }
-
-    function chooseCase(key) {
-      selectedCaseKey = key;
-      const caseData = cases[key];
-      document.querySelectorAll(".case-card").forEach(card => {
-        const active = card.dataset.case === key;
-        card.classList.toggle("selected", active);
-        card.setAttribute("aria-pressed", String(active));
-      });
-      document.getElementById("selected-case-title").textContent = caseData.title;
-      document.getElementById("selected-case-description").textContent = caseData.description;
-      document.getElementById("selected-case-question").textContent = caseData.question;
-      const activity = document.getElementById("activity-area");
-      activity.classList.remove("hidden");
-      activity.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-
-    async function copyData() {
-      if (!selectedCaseKey) {
-        showStatus("먼저 분석할 판례를 한 가지 선택해 주세요.", "error");
-        return;
-      }
-      const data = getData();
-      const row = [
-        data.submitted_at, data.grade, data.class, data.number, data.name, data.selected_case,
-        data.selected_rights, data.rights_reason, data.selected_remedies, data.remedy_reason,
-        data.solution, data.positive_effect_1, data.positive_effect_2, data.negative_effect_1,
-        data.negative_effect_2, data.judgment_order, data.judgment_reason
-      ].map(value => String(value).replace(/\t/g, " ").replace(/\r?\n/g, " ")).join("\t");
-
-      try {
-        await navigator.clipboard.writeText(row);
-        showStatus("답안 데이터가 복사되었습니다. Google Sheets의 빈 행을 선택한 뒤 붙여넣어 주세요.", "success");
-      } catch (error) {
-        showStatus("복사 기능을 사용할 수 없습니다. 브라우저의 클립보드 권한을 확인한 뒤 다시 시도해 주세요.", "error");
-      }
-    }
-
-    async function submitToSheet() {
-      if (!selectedCaseKey) {
-        showStatus("먼저 분석할 판례를 한 가지 선택해 주세요.", "error");
-        return;
-      }
-      if (!GAS_WEB_APP_URL || GAS_WEB_APP_URL === "YOUR_GAS_URL_HERE") {
-        showStatus("선생님이 Google Apps Script Web App URL을 설정한 뒤 제출할 수 있습니다. 지금은 시트 업로드용 데이터 복사 버튼을 이용해 주세요.", "error");
-        return;
-      }
-
-      const button = document.getElementById("submit-button");
-      const overlay = document.getElementById("loading-overlay");
-      button.disabled = true;
-      overlay.classList.add("show");
-
-      try {
-        // Google Apps Script CORS 차단 방지를 위한 mode: 'no-cors' 설정
-        await fetch(GAS_WEB_APP_URL, {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "text/plain;charset=utf-8" },
-          body: JSON.stringify(getData())
-        });
-        
-        showStatus("학습 결과가 구글 시트로 성공적으로 전송되었습니다! (구글 시트를 확인해 보세요)", "success");
-      } catch (error) {
-        console.error("전송 오류:", error);
-        showStatus("네트워크 오류가 발생했거나 전송에 실패했습니다. '데이터 복사' 버튼을 눌러 제출하세요.", "error");
-      } finally {
-        overlay.classList.remove("show");
-        button.disabled = false;
-      }
-    }
-
-    function printWorksheet() {
-      document.querySelectorAll("textarea").forEach(textarea => {
-        textarea.style.height = "auto";
-        textarea.style.height = textarea.scrollHeight + "px";
-      });
-      window.print();
-    }
-
+  function chooseCase(key) {
+    selectedCaseKey = key;
+    const caseData = cases[key];
     document.querySelectorAll(".case-card").forEach(card => {
-      card.addEventListener("click", () => chooseCase(card.dataset.case));
+      const active = card.dataset.case === key;
+      card.classList.toggle("selected", active);
+      card.setAttribute("aria-pressed", String(active));
     });
+    document.getElementById("selected-case-title").textContent = caseData.title;
+    document.getElementById("selected-case-description").textContent = caseData.description;
+    document.getElementById("selected-case-question").textContent = caseData.question;
+    const activity = document.getElementById("activity-area");
+    activity.classList.remove("hidden");
+    activity.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 
-    document.querySelectorAll('input[name="judgment-order"]').forEach(radio => {
-      radio.addEventListener("change", event => {
-        document.getElementById("judgment-order-text").value = event.target.value;
-      });
-    });
-
-    document.getElementById("submit-button").addEventListener("click", submitToSheet);
-    document.getElementById("copy-button").addEventListener("click", copyData);
-    document.getElementById("print-button").addEventListener("click", printWorksheet);
-
-    window.addEventListener("beforeprint", () => {
-      document.querySelectorAll("textarea").forEach(textarea => {
-        textarea.style.height = "auto";
-        textarea.style.height = textarea.scrollHeight + "px";
-      });
-    });
-
-    if (window.lucide) {
-      lucide.createIcons();
+  async function copyData() {
+    if (!selectedCaseKey) {
+      showStatus("먼저 분석할 판례를 한 가지 선택해 주세요.", "error");
+      return;
     }
-  </script>
- </body>
+    const data = getData();
+    const row = [
+      data.submitted_at, data.grade, data.class, data.number, data.name, data.selected_case,
+      data.selected_rights, data.rights_reason, data.selected_remedies, data.remedy_reason,
+      data.citizen_action, data.citizen_impact,
+      data.solution, data.positive_effect_1, data.positive_effect_2, data.negative_effect_1,
+      data.negative_effect_2, data.judgment_order, data.judgment_reason
+    ].map(value => String(value).replace(/\t/g, " ").replace(/\r?\n/g, " ")).join("\t");
+
+    try {
+      await navigator.clipboard.writeText(row);
+      showStatus("답안 데이터가 복사되었습니다. Google Sheets의 빈 행을 선택한 뒤 붙여넣어 주세요.", "success");
+    } catch (error) {
+      showStatus("복사 기능을 사용할 수 없습니다. 브라우저의 클립보드 권한을 확인한 뒤 다시 시도해 주세요.", "error");
+    }
+  }
+
+  async function submitToSheet() {
+    if (!selectedCaseKey) {
+      showStatus("먼저 분석할 판례를 한 가지 선택해 주세요.", "error");
+      return;
+    }
+    if (!GAS_WEB_APP_URL || GAS_WEB_APP_URL === "YOUR_GAS_URL_HERE") {
+      showStatus("Google Apps Script Web App URL이 설정되지 않았습니다. 지금은 시트 업로드용 데이터 복사 버튼을 이용해 주세요.", "error");
+      return;
+    }
+
+    const button = document.getElementById("submit-button");
+    const overlay = document.getElementById("loading-overlay");
+    button.disabled = true;
+    overlay.classList.add("show");
+
+    try {
+      const response = await fetch(GAS_WEB_APP_URL, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(getData())
+      });
+      if (!response.ok) throw new Error("전송 실패");
+      showStatus("학습 결과가 구글 시트로 제출되었습니다.", "success");
+    } catch (error) {
+      showStatus("네트워크 오류가 발생했습니다. 데이터를 복사하여 선생님께 제출하세요.", "error");
+    } finally {
+      overlay.classList.remove("show");
+      button.disabled = false;
+    }
+  }
+
+  /* =========================================================
+     인쇄 / 이미지 저장 공용: textarea 높이 자동 확장 + pdf-mode 전환
+  ========================================================= */
+  let __savedHeights = [];
+  function enterCleanMode(){
+    __savedHeights = [];
+    document.querySelectorAll("textarea").forEach(ta => {
+      __savedHeights.push([ta, ta.style.height]);
+      ta.style.height = "auto";
+      ta.style.height = (ta.scrollHeight + 4) + "px";
+    });
+    document.body.classList.add("pdf-mode");
+  }
+  function exitCleanMode(){
+    document.body.classList.remove("pdf-mode");
+    __savedHeights.forEach(([ta, h]) => { ta.style.height = h; });
+  }
+
+  function printWorksheet() {
+    enterCleanMode();
+    window.print();
+  }
+  window.addEventListener("afterprint", exitCleanMode);
+
+  async function saveAsImage() {
+    if (!selectedCaseKey) {
+      showStatus("먼저 분석할 판례를 한 가지 선택해 주세요.", "error");
+      return;
+    }
+    if (typeof html2canvas === "undefined") {
+      showStatus("이미지 저장 기능을 불러오지 못했습니다. 인터넷 연결을 확인하고 새로고침해 주세요.", "error");
+      return;
+    }
+
+    const overlay = document.getElementById("loading-overlay");
+    overlay.classList.add("show");
+    enterCleanMode();
+
+    await new Promise(r => setTimeout(r, 150));
+
+    try {
+      const data = getData();
+      const canvas = await html2canvas(document.querySelector(".study-page"), {
+        backgroundColor: "#ffffff",
+        scale: 2,
+        useCORS: true
+      });
+      const link = document.createElement("a");
+      const fileName = `기본권학습지_${data.name || "이름없음"}_${data.selected_case || "사건미선택"}.png`;
+      link.download = fileName;
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+      showStatus("학습지 이미지가 저장되었습니다.", "success");
+    } catch (error) {
+      showStatus("이미지 저장 중 오류가 발생했습니다. 'PDF 저장/인쇄' 기능을 대신 이용해 주세요.", "error");
+    } finally {
+      exitCleanMode();
+      overlay.classList.remove("show");
+    }
+  }
+
+  document.querySelectorAll(".case-card").forEach(card => {
+    card.addEventListener("click", () => chooseCase(card.dataset.case));
+  });
+
+  document.querySelectorAll('input[name="judgment-order"]').forEach(radio => {
+    radio.addEventListener("change", event => {
+      document.getElementById("judgment-order-text").value = event.target.value;
+    });
+  });
+
+  document.getElementById("submit-button").addEventListener("click", submitToSheet);
+  document.getElementById("copy-button").addEventListener("click", copyData);
+  document.getElementById("print-button").addEventListener("click", printWorksheet);
+  document.getElementById("image-button").addEventListener("click", saveAsImage);
+
+  lucide.createIcons();
+</script>
+</body>
 </html>
