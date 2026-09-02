@@ -21,7 +21,6 @@
   .canva-header{ border-bottom:3px solid var(--gold); }
   .canva-panel{ border-radius:4px; }
   .canva-card{ border-radius:2px; }
-  .canva-input{ }
   .canva-button{
     background: var(--gold);
     color: var(--navy-deep);
@@ -65,7 +64,6 @@
     margin-top:20px;
   }
 
-  /* 인쇄(window.print)와 이미지 저장(html2canvas)이 함께 쓰는 '깔끔 모드' */
   @media print{
     body.pdf-mode{ background:#fff !important; }
     body.pdf-mode .study-page{ max-width:none !important; padding:0 !important; }
@@ -325,7 +323,8 @@
 </div>
 
 <script>
-  const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwCTRvR8dmTPcw5U3NcDm4PjrdOU9zjv2d1WO4tMNZAtyP4o7fiXVzMM5dwepW_sBEp/exec";
+  // 전달해주신 구글 앱스 스크립트 Web App URL 반영 완료
+  const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbztx1hbIKezY2H10B6ZBgS9SfrKAvj2kCx6J8bhkph-1M9JxoAttYoGPfkKi4BM_4Ce/exec";
 
   const cases = {
     internet: {
@@ -391,7 +390,7 @@
     else box.classList.add("border-amber-300", "bg-amber-50", "text-amber-950");
     text.textContent = message;
     icon.setAttribute("data-lucide", type === "success" ? "circle-check" : type === "error" ? "triangle-alert" : "info");
-    lucide.createIcons();
+    if (window.lucide) lucide.createIcons();
   }
 
   function chooseCase(key) {
@@ -437,8 +436,8 @@
       showStatus("먼저 분석할 판례를 한 가지 선택해 주세요.", "error");
       return;
     }
-    if (!GAS_WEB_APP_URL || GAS_WEB_APP_URL === "YOUR_GAS_URL_HERE") {
-      showStatus("Google Apps Script Web App URL이 설정되지 않았습니다. 지금은 시트 업로드용 데이터 복사 버튼을 이용해 주세요.", "error");
+    if (!GAS_WEB_APP_URL) {
+      showStatus("Google Apps Script Web App URL이 설정되지 않았습니다. 시트 업로드용 데이터 복사 버튼을 이용해 주세요.", "error");
       return;
     }
 
@@ -448,12 +447,16 @@
     overlay.classList.add("show");
 
     try {
-      const response = await fetch(GAS_WEB_APP_URL, {
+      const data = getData();
+      const params = new URLSearchParams();
+      Object.keys(data).forEach(key => params.append(key, data[key] ?? ""));
+
+      await fetch(GAS_WEB_APP_URL, {
         method: "POST",
-        headers: { "Content-Type": "text/plain;charset=utf-8" },
-        body: JSON.stringify(getData())
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: params
       });
-      if (!response.ok) throw new Error("전송 실패");
       showStatus("학습 결과가 구글 시트로 제출되었습니다.", "success");
     } catch (error) {
       showStatus("네트워크 오류가 발생했습니다. 데이터를 복사하여 선생님께 제출하세요.", "error");
@@ -463,83 +466,80 @@
     }
   }
 
-  /* =========================================================
-     인쇄 / 이미지 저장 공용: textarea 높이 자동 확장 + pdf-mode 전환
-  ========================================================= */
   let __savedHeights = [];
-  function enterCleanMode(){
+  function enterCleanMode() {
     __savedHeights = [];
     document.querySelectorAll("textarea").forEach(ta => {
-      __savedHeights.push([ta, ta.style.height]);
+      __savedHeights.push({ el: ta, height: ta.style.height });
       ta.style.height = "auto";
-      ta.style.height = (ta.scrollHeight + 4) + "px";
+      ta.style.height = ta.scrollHeight + "px";
     });
     document.body.classList.add("pdf-mode");
   }
-  function exitCleanMode(){
+
+  function exitCleanMode() {
     document.body.classList.remove("pdf-mode");
-    __savedHeights.forEach(([ta, h]) => { ta.style.height = h; });
+    __savedHeights.forEach(item => {
+      item.el.style.height = item.height;
+    });
   }
 
-  function printWorksheet() {
+  function printPDF() {
+    if (!selectedCaseKey) {
+      showStatus("먼저 분석할 판례를 한 가지 선택해 주세요.", "error");
+      return;
+    }
     enterCleanMode();
-    window.print();
+    setTimeout(() => {
+      window.print();
+      setTimeout(exitCleanMode, 500);
+    }, 100);
   }
-  window.addEventListener("afterprint", exitCleanMode);
 
   async function saveAsImage() {
     if (!selectedCaseKey) {
       showStatus("먼저 분석할 판례를 한 가지 선택해 주세요.", "error");
       return;
     }
-    if (typeof html2canvas === "undefined") {
-      showStatus("이미지 저장 기능을 불러오지 못했습니다. 인터넷 연결을 확인하고 새로고침해 주세요.", "error");
-      return;
-    }
-
     const overlay = document.getElementById("loading-overlay");
     overlay.classList.add("show");
     enterCleanMode();
 
-    await new Promise(r => setTimeout(r, 150));
-
     try {
-      const data = getData();
-      const canvas = await html2canvas(document.querySelector(".study-page"), {
-        backgroundColor: "#ffffff",
-        scale: 2,
-        useCORS: true
-      });
+      const target = document.querySelector(".sheet-shell");
+      const canvas = await html2canvas(target, { scale: 2, useCORS: true, logging: false });
       const link = document.createElement("a");
-      const fileName = `기본권학습지_${data.name || "이름없음"}_${data.selected_case || "사건미선택"}.png`;
-      link.download = fileName;
+      const name = document.getElementById("student-name").value.trim() || "학생";
+      link.download = `헌법학습지_${name}.png`;
       link.href = canvas.toDataURL("image/png");
       link.click();
-      showStatus("학습지 이미지가 저장되었습니다.", "success");
-    } catch (error) {
-      showStatus("이미지 저장 중 오류가 발생했습니다. 'PDF 저장/인쇄' 기능을 대신 이용해 주세요.", "error");
+      showStatus("학습지가 이미지 파일로 저장되었습니다.", "success");
+    } catch (e) {
+      showStatus("이미지 저장 중 오류가 발생했습니다.", "error");
     } finally {
       exitCleanMode();
       overlay.classList.remove("show");
     }
   }
 
-  document.querySelectorAll(".case-card").forEach(card => {
-    card.addEventListener("click", () => chooseCase(card.dataset.case));
-  });
+  document.addEventListener("DOMContentLoaded", () => {
+    if (window.lucide) lucide.createIcons();
 
-  document.querySelectorAll('input[name="judgment-order"]').forEach(radio => {
-    radio.addEventListener("change", event => {
-      document.getElementById("judgment-order-text").value = event.target.value;
+    document.querySelectorAll(".case-card").forEach(card => {
+      card.addEventListener("click", () => chooseCase(card.dataset.case));
     });
+
+    document.querySelectorAll('input[name="judgment-order"]').forEach(radio => {
+      radio.addEventListener("change", (e) => {
+        document.getElementById("judgment-order-text").value = e.target.value;
+      });
+    });
+
+    document.getElementById("submit-button").addEventListener("click", submitToSheet);
+    document.getElementById("copy-button").addEventListener("click", copyData);
+    document.getElementById("print-button").addEventListener("click", printPDF);
+    document.getElementById("image-button").addEventListener("click", saveAsImage);
   });
-
-  document.getElementById("submit-button").addEventListener("click", submitToSheet);
-  document.getElementById("copy-button").addEventListener("click", copyData);
-  document.getElementById("print-button").addEventListener("click", printWorksheet);
-  document.getElementById("image-button").addEventListener("click", saveAsImage);
-
-  lucide.createIcons();
 </script>
 </body>
 </html>
