@@ -21,6 +21,7 @@
   .canva-header{ border-bottom:3px solid var(--gold); }
   .canva-panel{ border-radius:4px; }
   .canva-card{ border-radius:2px; }
+  .canva-input{ }
   .canva-button{
     background: var(--gold);
     color: var(--navy-deep);
@@ -64,6 +65,7 @@
     margin-top:20px;
   }
 
+  /* 인쇄(window.print)와 이미지 저장(html2canvas)이 함께 쓰는 '깔끔 모드' */
   @media print{
     body.pdf-mode{ background:#fff !important; }
     body.pdf-mode .study-page{ max-width:none !important; padding:0 !important; }
@@ -89,7 +91,7 @@
     <div>
      <p data-template-id="header-subject" class="canva-text mb-3 text-sm font-semibold tracking-[0.18em]">통합사회 · 헌법과 기본권 단원 · 수행평가 연습</p>
      <h1 data-template-id="page-title" class="canva-text serif mb-3 text-2xl md:text-3xl font-bold leading-tight">헌법과 기본권 보장 디지털 학습지</h1>
-     <p data-template-id="page-subtitle" class="canva-text max-w-2xl leading-7">판례를 분석하고, 내가 직접 정책을 제안한 뒤 모의 판결문까지 작성해 봅시다.</p>
+     <p data-template-id="page-subtitle" class="canva-text max-w-2xl leading-7">판례를 분석하고, 내가 직접 정책을 제안한 뒤 나만의 결론까지 작성해 봅시다.</p>
     </div>
     <div class="hidden md:block border-l-4 border-[#b58a35] pl-4 text-sm text-slate-500">
      <span data-template-id="header-note" class="canva-text">1인 1기기 · 태블릿 / 크롬북 학습용</span>
@@ -271,26 +273,13 @@
       <div class="step-number">4</div>
       <div class="pt-1">
        <p data-template-id="step-4-kicker" class="canva-text text-sm font-semibold tracking-[0.12em] text-[#b58a35]">STEP 4</p>
-       <h2 data-template-id="step-4-title" class="canva-text serif mt-1 text-lg font-bold">모의 판결문 작성하기</h2>
+       <h2 data-template-id="step-4-title" class="canva-text serif mt-1 text-lg font-bold">마무리 결론 작성하기</h2>
       </div>
      </div>
-     <p data-template-id="step-4-guide" class="canva-text mt-5 leading-7">판사가 되어 이 사건에 대한 결론(주문)과 그 이유를 작성해 보세요.</p>
-     <fieldset class="mt-5">
-      <legend data-template-id="order-legend" class="canva-text mb-3 font-semibold">주문 선택</legend>
-      <div class="space-y-3">
-       <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="radio" name="judgment-order" value="피청구인의 조치는 위헌임을 선고한다."><span data-template-id="order-1" class="canva-text">피청구인의 조치는 위헌임을 선고한다.</span></label>
-       <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="radio" name="judgment-order" value="해당 법률 조항은 헌법에 합치되지 아니한다."><span data-template-id="order-2" class="canva-text">해당 법률 조항은 헌법에 합치되지 아니한다.</span></label>
-       <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="radio" name="judgment-order" value="피청구인의 처분을 취소한다."><span data-template-id="order-3" class="canva-text">피청구인의 처분을 취소한다.</span></label>
-       <label class="choice flex cursor-pointer items-center gap-3 border border-slate-200 p-3"><input type="radio" name="judgment-order" value="청구인의 청구를 기각한다."><span data-template-id="order-4" class="canva-text">청구인의 청구를 기각한다.</span></label>
-      </div>
-     </fieldset>
+     <p data-template-id="step-4-guide" class="canva-text mt-5 leading-7">지금까지 분석한 기본권 침해, 구제 제도, 시민 참여 방안과 정책 제안을 종합해서 이 사건에 대한 나의 최종 결론을 작성해 보세요.</p>
      <div class="mt-6">
-      <label data-template-id="selected-order-label" class="canva-text mb-2 block font-semibold" for="judgment-order-text">선택한 주문</label>
-      <textarea id="judgment-order-text" class="min-h-[76px]" placeholder="위 주문 중 하나를 선택하면 이곳에 자동으로 입력됩니다."></textarea>
-     </div>
-     <div class="mt-6">
-      <label data-template-id="judgment-reason-label" class="canva-text mb-2 block font-semibold" for="judgment-reason">판결 이유</label>
-      <textarea id="judgment-reason" data-template-id="judgment-reason-input" class="canva-input" placeholder="1~3단계에서 작성한 내용을 바탕으로, 이러한 결론을 내린 이유를 판사의 입장에서 서술해 보세요."></textarea>
+      <label data-template-id="conclusion-label" class="canva-text mb-2 block font-semibold" for="conclusion">최종 결론</label>
+      <textarea id="conclusion" data-template-id="conclusion-input" class="canva-input" placeholder="이 사건에서 어떤 기본권이 왜 침해되었고, 어떤 구제 제도와 대안이 필요한지를 종합하여 나의 결론을 서술해 보세요."></textarea>
      </div>
     </section>
 
@@ -323,8 +312,7 @@
 </div>
 
 <script>
-  // 전달해주신 구글 앱스 스크립트 Web App URL 반영 완료
-  const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbztx1hbIKezY2H10B6ZBgS9SfrKAvj2kCx6J8bhkph-1M9JxoAttYoGPfkKi4BM_4Ce/exec";
+  const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxR7mTmMQbY2kAccsSlj7BB1UA2JV7_O5hCM6RyHcc7Wb4-1Vo2hBiUk4RQ4jKlFvwB/exec";
 
   const cases = {
     internet: {
@@ -375,8 +363,7 @@
       positive_effect_2: document.getElementById("positive-2").value.trim(),
       negative_effect_1: document.getElementById("negative-1").value.trim(),
       negative_effect_2: document.getElementById("negative-2").value.trim(),
-      judgment_order: document.getElementById("judgment-order-text").value.trim(),
-      judgment_reason: document.getElementById("judgment-reason").value.trim()
+      conclusion: document.getElementById("conclusion").value.trim()
     };
   }
 
@@ -390,7 +377,7 @@
     else box.classList.add("border-amber-300", "bg-amber-50", "text-amber-950");
     text.textContent = message;
     icon.setAttribute("data-lucide", type === "success" ? "circle-check" : type === "error" ? "triangle-alert" : "info");
-    if (window.lucide) lucide.createIcons();
+    lucide.createIcons();
   }
 
   function chooseCase(key) {
@@ -420,7 +407,7 @@
       data.selected_rights, data.rights_reason, data.selected_remedies, data.remedy_reason,
       data.citizen_action, data.citizen_impact,
       data.solution, data.positive_effect_1, data.positive_effect_2, data.negative_effect_1,
-      data.negative_effect_2, data.judgment_order, data.judgment_reason
+      data.negative_effect_2, data.conclusion
     ].map(value => String(value).replace(/\t/g, " ").replace(/\r?\n/g, " ")).join("\t");
 
     try {
@@ -436,8 +423,8 @@
       showStatus("먼저 분석할 판례를 한 가지 선택해 주세요.", "error");
       return;
     }
-    if (!GAS_WEB_APP_URL) {
-      showStatus("Google Apps Script Web App URL이 설정되지 않았습니다. 시트 업로드용 데이터 복사 버튼을 이용해 주세요.", "error");
+    if (!GAS_WEB_APP_URL || GAS_WEB_APP_URL === "YOUR_GAS_URL_HERE") {
+      showStatus("Google Apps Script Web App URL이 설정되지 않았습니다. 지금은 시트 업로드용 데이터 복사 버튼을 이용해 주세요.", "error");
       return;
     }
 
@@ -451,12 +438,11 @@
       const params = new URLSearchParams();
       Object.keys(data).forEach(key => params.append(key, data[key] ?? ""));
 
-      await fetch(GAS_WEB_APP_URL, {
+      const response = await fetch(GAS_WEB_APP_URL, {
         method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: params
       });
+      if (!response.ok) throw new Error("전송 실패");
       showStatus("학습 결과가 구글 시트로 제출되었습니다.", "success");
     } catch (error) {
       showStatus("네트워크 오류가 발생했습니다. 데이터를 복사하여 선생님께 제출하세요.", "error");
@@ -466,80 +452,77 @@
     }
   }
 
+  /* =========================================================
+     인쇄 / 이미지 저장 공용: textarea 높이 자동 확장 + pdf-mode 전환
+  ========================================================= */
   let __savedHeights = [];
-  function enterCleanMode() {
+  function enterCleanMode(){
     __savedHeights = [];
     document.querySelectorAll("textarea").forEach(ta => {
-      __savedHeights.push({ el: ta, height: ta.style.height });
+      __savedHeights.push([ta, ta.style.height]);
       ta.style.height = "auto";
-      ta.style.height = ta.scrollHeight + "px";
+      ta.style.height = (ta.scrollHeight + 4) + "px";
     });
     document.body.classList.add("pdf-mode");
   }
-
-  function exitCleanMode() {
+  function exitCleanMode(){
     document.body.classList.remove("pdf-mode");
-    __savedHeights.forEach(item => {
-      item.el.style.height = item.height;
-    });
+    __savedHeights.forEach(([ta, h]) => { ta.style.height = h; });
   }
 
-  function printPDF() {
-    if (!selectedCaseKey) {
-      showStatus("먼저 분석할 판례를 한 가지 선택해 주세요.", "error");
-      return;
-    }
+  function printWorksheet() {
     enterCleanMode();
-    setTimeout(() => {
-      window.print();
-      setTimeout(exitCleanMode, 500);
-    }, 100);
+    window.print();
   }
+  window.addEventListener("afterprint", exitCleanMode);
 
   async function saveAsImage() {
     if (!selectedCaseKey) {
       showStatus("먼저 분석할 판례를 한 가지 선택해 주세요.", "error");
       return;
     }
+    if (typeof html2canvas === "undefined") {
+      showStatus("이미지 저장 기능을 불러오지 못했습니다. 인터넷 연결을 확인하고 새로고침해 주세요.", "error");
+      return;
+    }
+
     const overlay = document.getElementById("loading-overlay");
     overlay.classList.add("show");
     enterCleanMode();
 
+    await new Promise(r => setTimeout(r, 150));
+
     try {
-      const target = document.querySelector(".sheet-shell");
-      const canvas = await html2canvas(target, { scale: 2, useCORS: true, logging: false });
+      const data = getData();
+      const canvas = await html2canvas(document.querySelector(".study-page"), {
+        backgroundColor: "#ffffff",
+        scale: 2,
+        useCORS: true
+      });
       const link = document.createElement("a");
-      const name = document.getElementById("student-name").value.trim() || "학생";
-      link.download = `헌법학습지_${name}.png`;
+      const fileName = `기본권학습지_${data.name || "이름없음"}_${data.selected_case || "사건미선택"}.png`;
+      link.download = fileName;
       link.href = canvas.toDataURL("image/png");
       link.click();
-      showStatus("학습지가 이미지 파일로 저장되었습니다.", "success");
-    } catch (e) {
-      showStatus("이미지 저장 중 오류가 발생했습니다.", "error");
+      showStatus("학습지 이미지가 저장되었습니다.", "success");
+    } catch (error) {
+      showStatus("이미지 저장 중 오류가 발생했습니다. 'PDF 저장/인쇄' 기능을 대신 이용해 주세요.", "error");
     } finally {
       exitCleanMode();
       overlay.classList.remove("show");
     }
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    if (window.lucide) lucide.createIcons();
-
-    document.querySelectorAll(".case-card").forEach(card => {
-      card.addEventListener("click", () => chooseCase(card.dataset.case));
-    });
-
-    document.querySelectorAll('input[name="judgment-order"]').forEach(radio => {
-      radio.addEventListener("change", (e) => {
-        document.getElementById("judgment-order-text").value = e.target.value;
-      });
-    });
-
-    document.getElementById("submit-button").addEventListener("click", submitToSheet);
-    document.getElementById("copy-button").addEventListener("click", copyData);
-    document.getElementById("print-button").addEventListener("click", printPDF);
-    document.getElementById("image-button").addEventListener("click", saveAsImage);
+  document.querySelectorAll(".case-card").forEach(card => {
+    card.addEventListener("click", () => chooseCase(card.dataset.case));
   });
+
+  document.getElementById("submit-button").addEventListener("click", submitToSheet);
+  document.getElementById("copy-button").addEventListener("click", copyData);
+  document.getElementById("print-button").addEventListener("click", printWorksheet);
+  document.getElementById("image-button").addEventListener("click", saveAsImage);
+
+  lucide.createIcons();
 </script>
 </body>
 </html>
